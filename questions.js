@@ -41,7 +41,10 @@ var removeNullAndFalseElements = function (array) {
     let b = [];
     console.log(a);
     for (i = 0; i < a.length; i++) {
-        b= a.splice([i],1, null);
+        if (a[i] !== null && a[i] !== false)
+        {
+            b.push(a[i]);
+        }
         console.log(b);
     }
     return b;
