@@ -1,136 +1,168 @@
-var selectElementsStartingWithA = function(array) {
+var selectElementsStartingWithA = function (array) {
+    let a = array;
+    let b = [];
+    for (i = 0; i < array.length; i++) {
+        console.log(a[i].charAt(0));
+        if (a[i].charAt(0) === 'a') {
+            /* charAt(0) pour verif le premier caractere de la chaine */
+            b.push(a[i]);
+        }
+    }
+    return b;
+}
+
+var selectElementsStartingWithVowel = function (array) {
+    let a = array;
+    let b = [];
+    for (i = 0; i < array.length; i++) {
+        if (a[i].charAt(0).match(/[aeiou]/gi)) {
+            /* .match(/[aeiou]/gi) pour verif si c'est une voyelle, 
+            sans tenir compte de la case */
+
+            b.push(a[i]);
+        }
+    }
+    return b;
+}
+
+var removeNullElements = function (array) {
+    let a = array;
+    let b = [];
+    for (i = 0; i < a.length; i++) {
+        if (a[i] !== null) {
+            b.push(a[i]);
+        }
+    }
+    return b;
+}
+
+var removeNullAndFalseElements = function (array) {
+    let a = array;
+    let b = [];
+    console.log(a);
+    for (i = 0; i < a.length; i++) {
+        b= a.splice([i],1, null);
+        console.log(b);
+    }
+    return b;
+}
+
+var reverseWordsInArray = function (array) {
     return 'Write your method here';
 }
 
-var selectElementsStartingWithVowel = function(array) {
+var everyPossiblePair = function (array) {
     return 'Write your method here';
 }
 
-var removeNullElements = function(array) {
+var allElementsExceptFirstThree = function (array) {
     return 'Write your method here';
 }
 
-var removeNullAndFalseElements = function(array) {
+var addElementToBeginning = function (array, element) {
     return 'Write your method here';
 }
 
-var reverseWordsInArray = function(array) {
+var sortByLastLetter = function (array) {
     return 'Write your method here';
 }
 
-var everyPossiblePair = function(array) {
+var getFirstHalf = function (string) {
     return 'Write your method here';
 }
 
-var allElementsExceptFirstThree = function(array) {
+var makeNegative = function (number) {
     return 'Write your method here';
 }
 
-var addElementToBeginning = function(array, element) {
+var numberOfPalindromes = function (array) {
     return 'Write your method here';
 }
 
-var sortByLastLetter = function(array) {
+var shortestWord = function (array) {
     return 'Write your method here';
 }
 
-var getFirstHalf = function(string) {
+var longestWord = function (array) {
     return 'Write your method here';
 }
 
-var makeNegative = function(number) {
+var sumNumbers = function (array) {
     return 'Write your method here';
 }
 
-var numberOfPalindromes = function(array) {
+var repeatElements = function (array) {
     return 'Write your method here';
 }
 
-var shortestWord = function(array) {
+var stringToNumber = function (string) {
     return 'Write your method here';
 }
 
-var longestWord = function(array) {
+var calculateAverage = function (array) {
     return 'Write your method here';
 }
 
-var sumNumbers = function(array) {
+var getElementsUntilGreaterThanFive = function (array) {
     return 'Write your method here';
 }
 
-var repeatElements = function(array) {
+var convertArrayToObject = function (array) {
     return 'Write your method here';
 }
 
-var stringToNumber = function(string) {
+var getAllLetters = function (array) {
     return 'Write your method here';
 }
 
-var calculateAverage = function(array) {
+var swapKeysAndValues = function (object) {
     return 'Write your method here';
 }
 
-var getElementsUntilGreaterThanFive = function(array) {
+var sumKeysAndValues = function (object) {
     return 'Write your method here';
 }
 
-var convertArrayToObject = function(array) {
+var removeCapitals = function (string) {
     return 'Write your method here';
 }
 
-var getAllLetters = function(array) {
+var roundUp = function (number) {
     return 'Write your method here';
 }
 
-var swapKeysAndValues = function(object) {
+var formatDateNicely = function (date) {
     return 'Write your method here';
 }
 
-var sumKeysAndValues = function(object) {
+var getDomainName = function (string) {
     return 'Write your method here';
 }
 
-var removeCapitals = function(string) {
+var titleize = function (string) {
     return 'Write your method here';
 }
 
-var roundUp = function(number) {
+var checkForSpecialCharacters = function (string) {
     return 'Write your method here';
 }
 
-var formatDateNicely = function(date) {
+var squareRoot = function (number) {
     return 'Write your method here';
 }
 
-var getDomainName = function(string) {
+var factorial = function (number) {
     return 'Write your method here';
 }
 
-var titleize = function(string) {
+var findAnagrams = function (string) {
     return 'Write your method here';
 }
 
-var checkForSpecialCharacters = function(string) {
+var convertToCelsius = function (number) {
     return 'Write your method here';
 }
 
-var squareRoot = function(number) {
+var letterPosition = function (array) {
     return 'Write your method here';
 }
-
-var factorial = function(number) {
-    return 'Write your method here';
-}
-
-var findAnagrams = function(string) {
-    return 'Write your method here';
-}
-
-var convertToCelsius = function(number) {
-    return 'Write your method here';
-}
-
-var letterPosition = function(array) {
-    return 'Write your method here';
-}
-
