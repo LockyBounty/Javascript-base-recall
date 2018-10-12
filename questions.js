@@ -100,11 +100,15 @@ var addElementToBeginning = function (array, element) {
 }
 
 var sortByLastLetter = function (array) {
-    return 'Write your method here';
+    /* .sort(fct) pour travailler chaque mot dans le tab
+     la fct va trier selon le charCodeAt(num)
+     a - b : tri ordre apha; b - a : tri ordre apha inversé*/
+    return array.sort((a,b)=> a.charCodeAt(a.length-1) - b.charCodeAt(b.length -1));
 }
 
 var getFirstHalf = function (string) {
-    return 'Write your method here';
+    /* substring pour decouper la string aux 2 points donnés */
+    return string.substring(0, Math.round(string.length / 2));
 }
 
 var makeNegative = function (number) {
@@ -114,8 +118,8 @@ var makeNegative = function (number) {
 
 var numberOfPalindromes = function (array) {
     /*un palindrome c'est un mot qui peut se lire dans 2 sens
-     donc le but c'est d'inverser chaque mot et de comparer
-     avec lui-meme*/
+     donc le but c'est d'inverser chaque mot et de le comparer
+     avec lui-meme */
     let a = array;
     let count = 0;
     for (i = 0; i < a.length; i++) {
@@ -131,28 +135,57 @@ var numberOfPalindromes = function (array) {
 }
 
 var shortestWord = function (array) {
+    /*<v1>*/
+    /*let a = array;
+    let b = "";
+    let c = [];
+    let d = "";
+    for (i = 0; i < a.length ; i++) {
+        b = a[i];
+        for (j = a.length-1; j >= 0; j--) {
+            if (a[j].length < b.length) {
+                c.splice(0,1, a[j]);
+                //console.log(c);/
+            }
+            d = c[0];
+        }
+    }*/
 
-    return 'Write your method here';
+    /*<v2> en une seule ligne: 1/filter pour verif si string
+     2/ sort pour trier et pour comparer av fct flechée
+     3/ renvoyer la val [0]*/
+    return array.filter(e => typeof e === 'string').sort((a, b) => a.length - b.length)[0];
 }
 
 var longestWord = function (array) {
-    return 'Write your method here';
+    /*meme chose que pour le precedent, sauf qu'on a
+     trier à l'envers, et renvoyé la val [0] du tab*/
+    return array.filter(e => typeof e === 'string').sort((a, b) => b.length - a.length)[0];
 }
 
 var sumNumbers = function (array) {
-    return 'Write your method here';
+    /* reduce permet d'agir sur totues les valeurs d'un tab
+     et d'en renvoyer une seule valeur, 
+     le "0" c'est la valeur par defaut, si on ne le met pas,
+     on a une erreur/
+     /version fléchée => array.reduce((a,b)=> a+b, 0 )*/
+    return array.reduce(function(a, b){return a+b }, 0);
 }
 
 var repeatElements = function (array) {
-    return 'Write your method here';
+    let a = array;
+    let b = array;
+    let c = a.concat(b);
+    /*on concatène valeurs de "a" et "b" dans un nouv. tab. "c" */
+    return c;
 }
 
 var stringToNumber = function (string) {
-    return 'Write your method here';
+    return parseInt(string);
 }
 
 var calculateAverage = function (array) {
-    return 'Write your method here';
+    return array.reduce((a, b)=> (a + b))/array.length;
 }
 
 var getElementsUntilGreaterThanFive = function (array) {
