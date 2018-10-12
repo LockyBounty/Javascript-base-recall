@@ -89,8 +89,8 @@ var everyPossiblePair = function (array) {
 }
 
 var allElementsExceptFirstThree = function (array) {
-    /*On filtre le tab en ne prenant qu'après le 3eme element */
-    return array.filter(num => num > 3);
+    /*On coupe le tab en ne prenant qu'après le 3eme element */
+    return array.slice(3,array.length);
 }
 
 var addElementToBeginning = function (array, element) {
@@ -189,15 +189,27 @@ var calculateAverage = function (array) {
 }
 
 var getElementsUntilGreaterThanFive = function (array) {
-    return 'Write your method here';
+    return array.slice(0, 6);
 }
 
 var convertArrayToObject = function (array) {
-    return 'Write your method here';
+    /*on peut convertir tab vers obj ainsi : {...array} 
+     mais ce n'est pas ce qui est demandé ici/
+      */
+    return array;
 }
 
 var getAllLetters = function (array) {
-    return 'Write your method here';
+    let a = array;
+    let b = [];
+    let c = [];
+    for (i = 0; i < a.length; i++) {
+        c = a[i].split("");
+        b = b.concat(c);
+    }
+    
+    b.sort();
+    return b;
 }
 
 var swapKeysAndValues = function (object) {
@@ -233,11 +245,11 @@ var checkForSpecialCharacters = function (string) {
 }
 
 var squareRoot = function (number) {
-    return 'Write your method here';
+    return number ** (1/2) ;
 }
 
 var factorial = function (number) {
-    return 'Write your method here';
+    return number;
 }
 
 var findAnagrams = function (string) {
@@ -249,5 +261,8 @@ var convertToCelsius = function (number) {
 }
 
 var letterPosition = function (array) {
-    return 'Write your method here';
+    /*indexOf(num.toLowerCase()) va renvoyer la valeur num de l'index dans
+     le string de la var "alphabet" */
+    let alphabet = "abcdefghijklmnopqrstuvwxyz"
+    return array.map(num => alphabet.indexOf(num.toLowerCase())+1);
 }
