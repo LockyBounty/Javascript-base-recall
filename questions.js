@@ -18,7 +18,7 @@ var selectElementsStartingWithVowel = function (array) {
         if (a[i].charAt(0).match(/[aeiou]/gi)) {
             /* .match(/[aeiou]/gi) pour verif si c'est une voyelle, 
             sans tenir compte de la case */
-
+            
             b.push(a[i]);
         }
     }
@@ -51,11 +51,28 @@ var removeNullAndFalseElements = function (array) {
 }
 
 var reverseWordsInArray = function (array) {
-    return 'Write your method here';
+    let b = [];
+    let c = [];
+    for (i = 0; i < array.length; i++) {
+        b = array[i];
+        let a = "";
+        /* on declare a ici pour le reset à chaque 
+         * fois qu'un string a ete traité */
+        for (j = b.length - 1; j >= 0; j--) {
+            /*Ne pas oublier le -1 sur .length
+             * lorsqu'on utilise le decremental car
+             * sinon va mettre un undefined value*/
+           a += b[j];
+        }
+        console.log(a);
+        c.push(a);
+        /*On met le string traité dans le tab après la boucle 2 */
+    }
+    return c;
 }
 
 var everyPossiblePair = function (array) {
-    return 'Write your method here';
+    return array;
 }
 
 var allElementsExceptFirstThree = function (array) {
