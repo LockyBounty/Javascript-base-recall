@@ -39,7 +39,7 @@ var removeNullElements = function (array) {
 var removeNullAndFalseElements = function (array) {
     let a = array;
     let b = [];
-    console.log(a);
+    
     for (i = 0; i < a.length; i++) {
         if (a[i] !== null && a[i] !== false)
         {
@@ -72,15 +72,31 @@ var reverseWordsInArray = function (array) {
 }
 
 var everyPossiblePair = function (array) {
-    return array;
+    
+    let b = [];
+    for (i = array.length -1; i >= 1; i--) {    
+        for (j = 0; j < array.length -1; j++) {
+            let a = [];
+            if (array[j] !== array[i] ) {
+                a.push(array[i], array[j]);
+                console.log(i, j);
+                
+                 b.push(a);
+            }
+        }
+    }
+    return b;
 }
 
 var allElementsExceptFirstThree = function (array) {
-    return 'Write your method here';
+    /*On filtre le tab en ne prenant qu'après le 3eme element */
+    return array.filter(num => num > 3);
 }
 
 var addElementToBeginning = function (array, element) {
-    return 'Write your method here';
+    let a = array;
+    a.unshift(element);
+    return a;
 }
 
 var sortByLastLetter = function (array) {
@@ -92,14 +108,30 @@ var getFirstHalf = function (string) {
 }
 
 var makeNegative = function (number) {
-    return 'Write your method here';
+    /* -Math.abs() met la valeur absolue en negatif */
+    return -Math.abs(number);
 }
 
 var numberOfPalindromes = function (array) {
-    return 'Write your method here';
+    /*un palindrome c'est un mot qui peut se lire dans 2 sens
+     donc le but c'est d'inverser chaque mot et de comparer
+     avec lui-meme*/
+    let a = array;
+    let count = 0;
+    for (i = 0; i < a.length; i++) {
+        /* split('') pour decouper chaque car. du string et les 
+         * mettre en tab
+         * reverse() pour inverser ce tab
+         * join('') pour réunir les caracteres sans rien entre */
+        if (a[i].split('').reverse().join('')=== a[i]) {
+            count++;
+        }
+    }
+    return count ;
 }
 
 var shortestWord = function (array) {
+
     return 'Write your method here';
 }
 
