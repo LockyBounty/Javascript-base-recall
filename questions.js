@@ -176,7 +176,7 @@ var sumNumbers = function (array) {
 
 /* reduce permet d'agir sur toutes les valeurs d'un tab
      *et d'en renvoyer une seule valeur, 
-     *le "0" c'est la valeur par defaut, si on ne le met pas,
+     *le "0" de fin c'est la valeur par defaut, si on ne le met pas,
      *on a une erreur/
      /version fléchée => array.reduce((a,b)=> a+b, 0 )*/
 
@@ -206,23 +206,35 @@ var convertArrayToObject = function (array) {
      *ça numérote les elements...
      *mais ce n'est pas ce qui est demandé ici/
       */
-    return array;
+    let objetA = {};
+    objetA = {...array};
+
+    return objetA;
 }
 
 var getAllLetters = function (array) {
     let a = array;
     let b = [];
     let c = [];
+    let d = [];
     for (i = 0; i < a.length; i++) {
         c = a[i].split("");
         b = b.concat(c);
     }
-    b.sort();
-    return b;
+    
+    d = b.sort((x, y) => x.charCodeAt(0) !== y.charCodeAt(0));
+    console.log(c);
+    return d.sort();
 }
 
 var swapKeysAndValues = function (object) {
-    return 'Write your method here';
+    let a = object;
+    let b = Object.values(a);
+    let swap = {};
+    swap = Object.keys(Object.values(a));
+
+    
+    return swap ;
 }
 
 var sumKeysAndValues = function (object) {
@@ -285,11 +297,13 @@ var getDomainName = function (string) {
 
 
 var titleize = function (string) {
-    let a = string.split("");
-    let b = a.filter(x => x.charAt[1].toUpperCase)
-
-    return b;
+    let a = string.split(" ");
+    console.log(a);
+    let b = a.map(x => x.charAt(0).toUpperCase() + x.substring(1, x.length));
+    let c = b.join(' ');
+    return c;
 }
+/*Attention à bien mettre l'espace entre quotes, détail qui peut jouer des tours*/
 
 var checkForSpecialCharacters = function (string) {
     let a = 'abcdefghijklmnopqrstuvwxyz';
@@ -323,7 +337,18 @@ var factorial = function (number) {
 }
 
 var findAnagrams = function (string) {
-    return string;
+    /*let a = string.split("");
+    let b = [];
+    for (i = 0; i < a.length; i++) {
+        for (j = a.length - 1; i >= 0; i--) {
+            if (i !== j) {
+                b = a[i] + a[j];
+                
+            }
+            console.log(b);
+        }
+    }*//*boucle infinie*/
+    return b;
 }
 
 var convertToCelsius = function (number) {
