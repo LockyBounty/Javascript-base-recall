@@ -57,8 +57,8 @@ var reverseWordsInArray = function (array) {
     for (i = 0; i < array.length; i++) {
         b = array[i];
         let a = "";
-        /* on declare a ici pour le reset à chaque 
-         * fois qu'un string a ete traité */
+        /* on declare a ici pour le reset ï¿½ chaque 
+         * fois qu'un string a ete traitï¿½ */
         for (j = b.length - 1; j >= 0; j--) {
             /*Ne pas oublier le -1 sur .length
              * lorsqu'on utilise le decremental car
@@ -67,7 +67,7 @@ var reverseWordsInArray = function (array) {
         }
         /*console.log(a);*/
         c.push(a);
-        /*On met le string traité dans le tab après la boucle 2 */
+        /*On met le string traitï¿½ dans le tab aprï¿½s la boucle 2 */
     }
     return c;
 }
@@ -93,7 +93,7 @@ var allElementsExceptFirstThree = function (array) {
     
     return array.slice(3,array.length);
 }
-/*On coupe le tab en ne prenant qu'après le 3eme element */
+/*On coupe le tab en ne prenant qu'aprï¿½s le 3eme element */
 
 var addElementToBeginning = function (array, element) {
     let a = array;
@@ -107,10 +107,10 @@ var sortByLastLetter = function (array) {
 }
 /* .sort(fct) pour travailler chaque mot dans le tab
 *la fct va trier selon le charCodeAt(num)
-*a - b : tri ordre apha; b - a : tri ordre apha inversé*/
+*a - b : tri ordre apha; b - a : tri ordre apha inversï¿½*/
 
 var getFirstHalf = function (string) {
-    /* substring pour decouper la string aux 2 points donnés */
+    /* substring pour decouper la string aux 2 points donnï¿½s */
     return string.substring(0, Math.round(string.length / 2));
 }
 
@@ -137,7 +137,7 @@ var numberOfPalindromes = function (array) {
 * avec lui-meme */
 /* .split('') pour decouper chaque car. du string et les mettre en tab
 * .reverse() pour inverser ce tab
-* .join('') pour réunir les caracteres sans rien entre */
+* .join('') pour rï¿½unir les caracteres sans rien entre */
 
 var shortestWord = function (array) {
     /*<v1>*/
@@ -157,7 +157,7 @@ var shortestWord = function (array) {
     }*/
 
     /*<v2> en une seule ligne: 1/filter pour verif si string
-     *2/ sort pour trier et pour comparer av fct flechée
+     *2/ sort pour trier et pour comparer av fct flechï¿½e
      *3/ renvoyer la val [0]*/
     return array.filter(e => typeof e === 'string').sort((a, b) => a.length - b.length)[0];
 }
@@ -167,7 +167,7 @@ var longestWord = function (array) {
     return array.filter(e => typeof e === 'string').sort((a, b) => b.length - a.length)[0];
 }
 /*meme chose que pour le precedent, sauf qu'on a
- *trié à l'envers, et renvoyé la val [0] du tab*/
+ *triï¿½ ï¿½ l'envers, et renvoyï¿½ la val [0] du tab*/
 
 var sumNumbers = function (array) {
     
@@ -178,7 +178,7 @@ var sumNumbers = function (array) {
      *et d'en renvoyer une seule valeur, 
      *le "0" de fin c'est la valeur par defaut, si on ne le met pas,
      *on a une erreur/
-     /version fléchée => array.reduce((a,b)=> a+b, 0 )*/
+     /version flï¿½chï¿½e => array.reduce((a,b)=> a+b, 0 )*/
 
 var repeatElements = function (array) {
     let a = array;
@@ -186,7 +186,7 @@ var repeatElements = function (array) {
     let c = a.concat(b);
     return c;
 }
-/*on concatène valeurs de "a" et "b" dans un nouv. tab. "c" */
+/*on concatï¿½ne valeurs de "a" et "b" dans un nouv. tab. "c" */
 
 
 var stringToNumber = function (string) {
@@ -203,8 +203,8 @@ var getElementsUntilGreaterThanFive = function (array) {
 
 var convertArrayToObject = function (array) {
     /*on peut convertir tab vers obj ainsi : {...array} 
-     *ça numérote les elements...
-     *mais ce n'est pas ce qui est demandé ici/
+     *ï¿½a numï¿½rote les elements...
+     *mais ce n'est pas ce qui est demandï¿½ ici/
       */
     let objetA = {};
     objetA = {...array};
@@ -246,14 +246,13 @@ var removeCapitals = function (string) {
     let b = [];
     for (i = 0; i < a.length; i++) {
         if (a[i] === a[i].toLowerCase() || a[i] === "") {
-            
             b += a[i];
         }
     }
     return b;
 }
 /*ici on prend, tant que les caract. sont minuscules 
- * et/ou égale à espace blanc */
+ * et/ou ï¿½gale ï¿½ espace blanc */
 
 var roundUp = function (number) {
     return Math.ceil(number);
@@ -261,7 +260,7 @@ var roundUp = function (number) {
 
 var formatDateNicely = function (date) {
     
-    return `${date.toLocaleDateString()}`;
+    return `${date.toLocaleDateString('fr-FR')}`;
 }
 
 /*INFOS. methodes pour date :
@@ -291,9 +290,9 @@ var getDomainName = function (string) {
 }
 
 /*remplace par "" tout ce qu'il y a avant "@", "@" compris
- * .subtring() pour couper la chaine aux valeurs données
+ * .subtring() pour couper la chaine aux valeurs donnï¿½es
  * .lastIndexOf() va renvoyer la position de la derniere occurence 
- * du caractere donnée, ds le cas ici, "."  ds la chaine ou tab*/
+ * du caractere donnï¿½e, ds le cas ici, "."  ds la chaine ou tab*/
 
 
 var titleize = function (string) {
@@ -303,7 +302,7 @@ var titleize = function (string) {
     let c = b.join(' ');
     return c;
 }
-/*Attention à bien mettre l'espace entre quotes, détail qui peut jouer des tours*/
+/*Attention ï¿½ bien mettre l'espace entre quotes, dï¿½tail qui peut jouer des tours*/
 
 var checkForSpecialCharacters = function (string) {
     let a = 'abcdefghijklmnopqrstuvwxyz';
