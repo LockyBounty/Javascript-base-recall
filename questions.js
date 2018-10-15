@@ -57,8 +57,8 @@ var reverseWordsInArray = function (array) {
     for (i = 0; i < array.length; i++) {
         b = array[i];
         let a = "";
-        /* on declare a ici pour le reset � chaque 
-         * fois qu'un string a ete trait� */
+        /* on declare a ici pour le reset a chaque 
+         * fois qu'un string a ete traite */
         for (j = b.length - 1; j >= 0; j--) {
             /*Ne pas oublier le -1 sur .length
              * lorsqu'on utilise le decremental car
@@ -67,7 +67,7 @@ var reverseWordsInArray = function (array) {
         }
         /*console.log(a);*/
         c.push(a);
-        /*On met le string trait� dans le tab apr�s la boucle 2 */
+        /*On met le string traite dans le tab apres la boucle 2 */
     }
     return c;
 }
@@ -107,10 +107,10 @@ var sortByLastLetter = function (array) {
 }
 /* .sort(fct) pour travailler chaque mot dans le tab
 *la fct va trier selon le charCodeAt(num)
-*a - b : tri ordre apha; b - a : tri ordre apha invers�*/
+*a - b : tri ordre apha; b - a : tri ordre apha inverse*/
 
 var getFirstHalf = function (string) {
-    /* substring pour decouper la string aux 2 points donn�s */
+    /* substring pour decouper la string aux 2 points donnes */
     return string.substring(0, Math.round(string.length / 2));
 }
 
@@ -137,7 +137,7 @@ var numberOfPalindromes = function (array) {
 * avec lui-meme */
 /* .split('') pour decouper chaque car. du string et les mettre en tab
 * .reverse() pour inverser ce tab
-* .join('') pour r�unir les caracteres sans rien entre */
+* .join('') pour reunir les caracteres sans rien entre */
 
 var shortestWord = function (array) {
     /*<v1>*/
@@ -167,7 +167,7 @@ var longestWord = function (array) {
     return array.filter(e => typeof e === 'string').sort((a, b) => b.length - a.length)[0];
 }
 /*meme chose que pour le precedent, sauf qu'on a
- *tri� � l'envers, et renvoy� la val [0] du tab*/
+ *trie a l'envers, et renvoye la val [0] du tab*/
 
 var sumNumbers = function (array) {
     
@@ -178,7 +178,7 @@ var sumNumbers = function (array) {
      *et d'en renvoyer une seule valeur, 
      *le "0" de fin c'est la valeur par defaut, si on ne le met pas,
      *on a une erreur/
-     /version fl�ch�e => array.reduce((a,b)=> a+b, 0 )*/
+     /version flechee => array.reduce((a,b)=> a+b, 0 )*/
 
 var repeatElements = function (array) {
     let a = array;
@@ -186,7 +186,7 @@ var repeatElements = function (array) {
     let c = a.concat(b);
     return c;
 }
-/*on concat�ne valeurs de "a" et "b" dans un nouv. tab. "c" */
+/*on concatene valeurs de "a" et "b" dans un nouv. tab. "c" */
 
 
 var stringToNumber = function (string) {
@@ -203,8 +203,8 @@ var getElementsUntilGreaterThanFive = function (array) {
 
 var convertArrayToObject = function (array) {
     /*on peut convertir tab vers obj ainsi : {...array} 
-     *�a num�rote les elements...
-     *mais ce n'est pas ce qui est demand� ici/
+     *ca numerote les elements...
+     *mais ce n'est pas ce qui est demande ici/
       */
     let objetA = {};
     objetA = {...array};
@@ -216,15 +216,14 @@ var getAllLetters = function (array) {
     let a = array;
     let b = [];
     let c = [];
-    let d = [];
     for (i = 0; i < a.length; i++) {
         c = a[i].split("");
         b = b.concat(c);
     }
     
-    d = b.sort((x, y) => x.charCodeAt(0) !== y.charCodeAt(0));
-    console.log(c);
-    return d.sort();
+    b.sort((x, y) => x.charCodeAt(0) !== y.charCodeAt(0));
+    
+    return b;
 }
 
 var swapKeysAndValues = function (object) {
@@ -252,7 +251,7 @@ var removeCapitals = function (string) {
     return b;
 }
 /*ici on prend, tant que les caract. sont minuscules 
- * et/ou �gale � espace blanc */
+ * et/ou egale a espace blanc */
 
 var roundUp = function (number) {
     return Math.ceil(number);
@@ -290,9 +289,9 @@ var getDomainName = function (string) {
 }
 
 /*remplace par "" tout ce qu'il y a avant "@", "@" compris
- * .subtring() pour couper la chaine aux valeurs donn�es
+ * .subtring() pour couper la chaine aux valeurs donnees
  * .lastIndexOf() va renvoyer la position de la derniere occurence 
- * du caractere donn�e, ds le cas ici, "."  ds la chaine ou tab*/
+ * du caractere donnee, ds le cas ici, "."  ds la chaine ou tab*/
 
 
 var titleize = function (string) {
@@ -302,7 +301,7 @@ var titleize = function (string) {
     let c = b.join(' ');
     return c;
 }
-/*Attention � bien mettre l'espace entre quotes, d�tail qui peut jouer des tours*/
+/*Attention a bien mettre l'espace entre quotes, detail qui peut jouer des tours*/
 
 var checkForSpecialCharacters = function (string) {
     let a = 'abcdefghijklmnopqrstuvwxyz';
