@@ -4,7 +4,7 @@ var selectElementsStartingWithA = function (array) {
     for (i = 0; i < array.length; i++) {
         console.log(a[i].charAt(0));
         if (a[i].charAt(0) === 'a') {
-           
+
             b.push(a[i]);
         }
     }
@@ -40,13 +40,12 @@ var removeNullElements = function (array) {
 var removeNullAndFalseElements = function (array) {
     let a = array;
     let b = [];
-    
+
     for (i = 0; i < a.length; i++) {
-        if (a[i] !== null && a[i] !== false)
-        {
+        if (a[i] !== null && a[i] !== false) {
             b.push(a[i]);
         }
-        console.log(b);
+        /*console.log(b);*/
     }
     return b;
 }
@@ -63,7 +62,7 @@ var reverseWordsInArray = function (array) {
             /*Ne pas oublier le -1 sur .length
              * lorsqu'on utilise le decremental car
              * sinon va mettre un undefined value*/
-           a += b[j];
+            a += b[j];
         }
         /*console.log(a);*/
         c.push(a);
@@ -73,25 +72,25 @@ var reverseWordsInArray = function (array) {
 }
 
 var everyPossiblePair = function (array) {
-    
+
     let b = [];
     let c = [];
-    for (i = array.length -1; i >= 1; i--) {    
-        for (j = 0; j < array.length -1; j++) {
+    for (i = array.length - 1; i >= 1; i--) {
+        for (j = 0; j < array.length - 1; j++) {
             let a = [];
-            if (array[j] !== array[i] ) {
+            if (array[j] !== array[i]) {
                 a.push(array[i], array[j]);
                 b.push(a);
             }
         }
-        c = b.map(x=> x.sort()); /*trie chaque bloc d'element par alpha. */
+        c = b.map(x => x.sort()); /*trie chaque bloc d'element par alpha. */
     }
     return c;
 }
 
 var allElementsExceptFirstThree = function (array) {
-    
-    return array.slice(3,array.length);
+
+    return array.slice(3, array.length);
 }
 /*On coupe le tab en ne prenant qu'apr�s le 3eme element */
 
@@ -103,11 +102,11 @@ var addElementToBeginning = function (array, element) {
 
 var sortByLastLetter = function (array) {
 
-    return array.sort((a,b)=> a.charCodeAt(a.length-1) - b.charCodeAt(b.length -1));
+    return array.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
 }
 /* .sort(fct) pour travailler chaque mot dans le tab
-*la fct va trier selon le charCodeAt(num)
-*a - b : tri ordre apha; b - a : tri ordre apha inverse*/
+ *la fct va trier selon le charCodeAt(num)
+ *a - b : tri ordre apha; b - a : tri ordre apha inverse*/
 
 var getFirstHalf = function (string) {
     /* substring pour decouper la string aux 2 points donnes */
@@ -124,20 +123,20 @@ var numberOfPalindromes = function (array) {
     let a = array;
     let count = 0;
     for (i = 0; i < a.length; i++) {
-        
-        if (a[i].split('').reverse().join('')=== a[i]) {
+
+        if (a[i].split('').reverse().join('') === a[i]) {
             count++;
         }
     }
-    return count ;
+    return count;
 }
 
 /*un palindrome c'est un mot qui peut se lire dans 2 sens
-*donc le but c'est d'inverser chaque mot et de le comparer
-* avec lui-meme */
+ *donc le but c'est d'inverser chaque mot et de le comparer
+ * avec lui-meme */
 /* .split('') pour decouper chaque car. du string et les mettre en tab
-* .reverse() pour inverser ce tab
-* .join('') pour reunir les caracteres sans rien entre */
+ * .reverse() pour inverser ce tab
+ * .join('') pour reunir les caracteres sans rien entre */
 
 var shortestWord = function (array) {
     /*<v1>*/
@@ -170,8 +169,10 @@ var longestWord = function (array) {
  *trie a l'envers, et renvoye la val [0] du tab*/
 
 var sumNumbers = function (array) {
-    
-    return array.reduce(function(a, b){return a+b }, 0);
+
+    return array.reduce(function (a, b) {
+        return a + b
+    }, 0);
 }
 
 /* reduce permet d'agir sur toutes les valeurs d'un tab
@@ -194,7 +195,7 @@ var stringToNumber = function (string) {
 }
 
 var calculateAverage = function (array) {
-    return array.reduce((a, b)=> (a + b))/array.length;
+    return array.reduce((a, b) => (a + b)) / array.length;
 }
 
 var getElementsUntilGreaterThanFive = function (array) {
@@ -205,9 +206,10 @@ var convertArrayToObject = function (array) {
     /*on peut convertir tab vers obj ainsi : {...array} 
      *ca numerote les elements...
      *mais ce n'est pas ce qui est demande ici/
-      */
+     */
     let objetA = {};
-    objetA = {...array};
+    objetA = { ...array
+    };
 
     return objetA;
 }
@@ -220,24 +222,43 @@ var getAllLetters = function (array) {
         c = a[i].split("");
         b = b.concat(c);
     }
-    
+
     b.sort((x, y) => x.charCodeAt(0) !== y.charCodeAt(0));
-    
+
     return b;
 }
 
 var swapKeysAndValues = function (object) {
-    let a = object;
-    let b = Object.values(a);
-    let swap = {};
-    swap = Object.keys(Object.values(a));
-
+    let swapObj = {};
     
-    return swap ;
+    Object.keys(object).forEach(keyLocky => 
+        swapObj[object[keyLocky]] = keyLocky
+    );
+    console.log(object);
+    console.log(swapObj);
+
+    return swapObj;
 }
+/*Object.keys(...) met ttes les keys dans un array,
+ *Object.values(...) met ttes les valeurs dans un array, 
+ * On travaille toutes les keys de object avec .forEach(), 
+ * on pourrait aussi utiliser à la place de forEach: for(let key in object){...}
+ * */
 
 var sumKeysAndValues = function (object) {
-    return 'Write your method here';
+    let sumcles = 0;
+    let sumvaleurs = 0;
+    let concatenation = [];
+    sumcles = Object.keys(object).map(x=> parseInt(x));
+    sumvaleurs = Object.values(object).map(x => parseInt(x));;
+    concatenation = sumcles.concat(sumvaleurs);
+    let sum = concatenation.reduce((a, b)=> a + b);
+
+    console.log(Object.keys(object));
+    console.log(sumcles);
+    console.log(sumvaleurs);
+    console.log(sum);
+    return sum;
 }
 
 var removeCapitals = function (string) {
@@ -250,7 +271,7 @@ var removeCapitals = function (string) {
     }
     return b;
 }
-/*ici on prend, tant que les caract. sont minuscules 
+/*ici on prend tant que les caract. sont minuscules 
  * et/ou egale a espace blanc */
 
 var roundUp = function (number) {
@@ -258,7 +279,7 @@ var roundUp = function (number) {
 }
 
 var formatDateNicely = function (date) {
-    
+
     return `${date.toLocaleDateString('fr-FR')}`;
 }
 
@@ -282,9 +303,9 @@ date.getTimezoneOffset() - Returns the number of minutes between the machine loc
 
 
 var getDomainName = function (string) {
-    let a = string.replace(/.*@/gi, ""); 
+    let a = string.replace(/.*@/gi, "");
     let b = a.substring(0, a.lastIndexOf("."));
-    
+
     return b;
 }
 
@@ -319,7 +340,7 @@ var checkForSpecialCharacters = function (string) {
 }
 
 var squareRoot = function (number) {
-    return number ** (1/2) ;
+    return number ** (1 / 2);
 }
 
 var factorial = function (number) {
@@ -345,17 +366,18 @@ var findAnagrams = function (string) {
             }
             console.log(b);
         }
-    }*//*boucle infinie*/
+    }*/
+    /*boucle infinie*/
     return b;
 }
 
 var convertToCelsius = function (number) {
-    return Math.round((number-32)*(5/9));
+    return Math.round((number - 32) * (5 / 9));
 }
 
 var letterPosition = function (array) {
     let alphabet = "abcdefghijklmnopqrstuvwxyz"
-    return array.map(num => alphabet.indexOf(num.toLowerCase())+1);
+    return array.map(num => alphabet.indexOf(num.toLowerCase()) + 1);
 }
 
 /*indexOf(num.toLowerCase()) va renvoyer la valeur num de l'index dans
