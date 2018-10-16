@@ -260,6 +260,10 @@ var sumKeysAndValues = function (object) {
     console.log(sum);
     return sum;
 }
+/*1/ On convertit en numerique
+  2/ On concatene les deux parties
+  3/ On additionne ttes les valeurs de l'array cree 
+  */
 
 var removeCapitals = function (string) {
     let a = string.split("");
