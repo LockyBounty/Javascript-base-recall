@@ -210,22 +210,17 @@ var convertArrayToObject = function (array) {
     let objetA = {};
     objetA = { ...array
     };
-
+    console.log("test");
     return objetA;
+
 }
 
 var getAllLetters = function (array) {
-    let a = array;
-    let b = [];
-    let c = [];
-    for (i = 0; i < a.length; i++) {
-        c = a[i].split("");
-        b = b.concat(c);
-    }
+    array = array.join("").split("").sort();
+    let myObj = new Set(array);
+    array = Array.from(myObj);
 
-    b.sort((x, y) => x.charCodeAt(0) !== y.charCodeAt(0));
-
-    return b;
+    return array;
 }
 
 var swapKeysAndValues = function (object) {
@@ -234,8 +229,8 @@ var swapKeysAndValues = function (object) {
     Object.keys(object).forEach(keyLocky => 
         swapObj[object[keyLocky]] = keyLocky
     );
-    console.log(object);
-    console.log(swapObj);
+    // console.log(object);
+    // console.log(swapObj);
 
     return swapObj;
 }
@@ -254,10 +249,10 @@ var sumKeysAndValues = function (object) {
     concatenation = sumcles.concat(sumvaleurs);
     let sum = concatenation.reduce((a, b)=> a + b);
 
-    console.log(Object.keys(object));
-    console.log(sumcles);
-    console.log(sumvaleurs);
-    console.log(sum);
+    // console.log(Object.keys(object));
+    // console.log(sumcles);
+    // console.log(sumvaleurs);
+    // console.log(sum);
     return sum;
 }
 /*1/ On convertit en numerique
@@ -321,7 +316,7 @@ var getDomainName = function (string) {
 
 var titleize = function (string) {
     let a = string.split(" ");
-    console.log(a);
+    // console.log(a);
     let b = a.map(x => x.charAt(0).toUpperCase() + x.substring(1, x.length));
     let c = b.join(' ');
     return c;
@@ -332,10 +327,10 @@ var checkForSpecialCharacters = function (string) {
     let a = 'abcdefghijklmnopqrstuvwxyz';
     let b = a.toUpperCase();
     let c = '0123456789';
-    console.log(a, b, c);
+    // console.log(a, b, c);
     let checkSp;
     if (string.indexOf(a) > -1) {
-        console.log("abba");
+        // console.log("abba");
         checkSp = true;
     } else {
         checkSp = false;
