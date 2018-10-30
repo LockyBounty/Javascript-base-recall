@@ -207,12 +207,16 @@ var convertArrayToObject = function (array) {
      *ca numerote les elements...
      *mais ce n'est pas ce qui est demande ici/
      */
-    let objetA = {};
-    objetA = { ...array
-    };
-    console.log("test");
-    return objetA;
+    
+    let objetArray = {};
 
+    for (i=0;i<array.length;i+=2){
+        /* on jump de deux places pour ne pas superposer les valeurs de l'array */
+        objetArray[array[i]] = array[i+1];
+        /*On attribue a la key (qui a recu la valeur de l'array[i]) sa value qui est array +1  */
+        console.log(objetArray)
+    }
+    return objetArray;
 }
 
 var getAllLetters = function (array) {
