@@ -289,9 +289,9 @@ var formatDateNicely = function (date) {
 /*INFOS. methodes pour date :
 var date = new Date();
 ------------------------
-date.toLocaleString();       // -> "2/1/2013 7:37:08 AM"
-date.toLocaleDateString();   // -> "2/1/2013"
-date.toLocaleTimeString();  // -> "7:38:05 AM"
+date.toLocaleString();       // -> "2/1/2013 7:37:08 AM" Selon ou on est, sinon preciser
+date.toLocaleDateString();   // -> "2/1/2013" Selon ou on est
+date.toLocaleTimeString();  // -> "7:38:05 AM" Selon ou on est
 date.getFullYear() - Returns the 4-digit year
 date.getMonth() - Returns a zero-based integer (0-11) representing the month of the year.
 date.getDate() - Returns the day of the month (1-31).
@@ -320,26 +320,24 @@ var getDomainName = function (string) {
 
 var titleize = function (string) {
     let a = string.split(" ");
+    let d;
     // console.log(a);
     let b = a.map(x => x.charAt(0).toUpperCase() + x.substring(1, x.length));
     let c = b.join(' ');
-    return c;
+    d = c.replace(/the/gim, "the");
+    
+    return  d;
+    
 }
 /*Attention a bien mettre l'espace entre quotes, detail qui peut jouer des tours*/
 
 var checkForSpecialCharacters = function (string) {
-    let a = 'abcdefghijklmnopqrstuvwxyz';
-    let b = a.toUpperCase();
-    let c = '0123456789';
-    // console.log(a, b, c);
-    let checkSp;
-    if (string.indexOf(a) > -1) {
-        // console.log("abba");
-        checkSp = true;
-    } else {
-        checkSp = false;
-    }
-    return checkSp;
+    let a = string;
+    let specChar = /[!@#$%^&*(),.?":{}|<>]/; 
+    //regex des caracteres speciaux
+    let result = specChar.test(a);
+    console.log(result);
+    return result;
 }
 
 var squareRoot = function (number) {
