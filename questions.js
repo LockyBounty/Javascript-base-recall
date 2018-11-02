@@ -207,12 +207,12 @@ var convertArrayToObject = function (array) {
      *ca numerote les elements...
      *mais ce n'est pas ce qui est demande ici/
      */
-    
+
     let objetArray = {};
 
-    for (i=0;i<array.length;i+=2){
+    for (i = 0; i < array.length; i += 2) {
         /* on jump de deux places pour ne pas superposer les valeurs de l'array */
-        objetArray[array[i]] = array[i+1];
+        objetArray[array[i]] = array[i + 1];
         /*On attribue a la key (qui a recu la valeur de l'array[i]) sa value qui est array +1  */
         console.log(objetArray)
     }
@@ -229,8 +229,8 @@ var getAllLetters = function (array) {
 
 var swapKeysAndValues = function (object) {
     let swapObj = {};
-    
-    Object.keys(object).forEach(keyLocky => 
+
+    Object.keys(object).forEach(keyLocky =>
         swapObj[object[keyLocky]] = keyLocky
     );
     // console.log(object);
@@ -248,10 +248,10 @@ var sumKeysAndValues = function (object) {
     let sumcles = 0;
     let sumvaleurs = 0;
     let concatenation = [];
-    sumcles = Object.keys(object).map(x=> parseInt(x));
+    sumcles = Object.keys(object).map(x => parseInt(x));
     sumvaleurs = Object.values(object).map(x => parseInt(x));;
     concatenation = sumcles.concat(sumvaleurs);
-    let sum = concatenation.reduce((a, b)=> a + b);
+    let sum = concatenation.reduce((a, b) => a + b);
 
     // console.log(Object.keys(object));
     // console.log(sumcles);
@@ -321,19 +321,28 @@ var getDomainName = function (string) {
 var titleize = function (string) {
     let a = string.split(" ");
     let d;
+    let regx = /^\w+/gm;
     // console.log(a);
-    let b = a.map(x => x.charAt(0).toUpperCase() + x.substring(1, x.length));
+    let b = a.map(function (x) {
+        if (x.length > 3 ) {
+            return (x.charAt(0).toUpperCase() + x.substring(1, x.length))
+        } else {
+            return (x)
+        }
+    });
+
+
     let c = b.join(' ');
-    d = c.replace(/the/gim, "the");
-    
-    return  d;
-    
+    d = c.match(/^\w+/gim);
+    console.log(d);
+    return c;
+
 }
 /*Attention a bien mettre l'espace entre quotes, detail qui peut jouer des tours*/
 
 var checkForSpecialCharacters = function (string) {
     let a = string;
-    let specChar = /[!@#$%^&*(),.?":{}|<>]/; 
+    let specChar = /[!@#$%^&*(),.?":{}|<>]/;
     //regex des caracteres speciaux
     let result = specChar.test(a);
     console.log(result);
