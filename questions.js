@@ -319,10 +319,11 @@ var getDomainName = function (string) {
 
 
 var titleize = function (string) {
-    let a = string.split(" ");
+    /*let a = string.split(" ");
     let d;
-    let regx = /^\w+/gm;
+    let regx = /\b\w+/gm;
     // console.log(a);
+
     let b = a.map(function (x) {
         if (x.length > 3 ) {
             return (x.charAt(0).toUpperCase() + x.substring(1, x.length))
@@ -330,13 +331,13 @@ var titleize = function (string) {
             return (x)
         }
     });
+    let c = b.join(' ');*/
 
-
-    let c = b.join(' ');
-    d = c.match(/^\w+/gim);
-    console.log(d);
+    let regx = /^(?=the)\w+/gim;
+    let c = string;
+    console.log(c.match(regx));
+    
     return c;
-
 }
 /*Attention a bien mettre l'espace entre quotes, detail qui peut jouer des tours*/
 
@@ -345,7 +346,7 @@ var checkForSpecialCharacters = function (string) {
     let specChar = /[!@#$%^&*(),.?":{}|<>]/;
     //regex des caracteres speciaux
     let result = specChar.test(a);
-    console.log(result);
+    //console.log(result);
     return result;
 }
 
